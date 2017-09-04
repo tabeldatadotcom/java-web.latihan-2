@@ -16,7 +16,7 @@ Latihan membuat aplikasi perbankan modul deposito:
 
 jadi ketika menyimpan aplikasi deposit itu sekaligus membuat kartu depositonya dengan perhitungan
 
-bunga harian = jumlah hari dalam sebulan * nominal * bunga per tahun / 365
+bunga bulanan = jumlah hari dalam sebulan * nominal * bunga per tahun / 365
 
 contoh : 
 
