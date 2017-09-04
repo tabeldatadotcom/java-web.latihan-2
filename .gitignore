@@ -1,3 +1,7 @@
 # maven project
 target/
+
+# idea project
 .idea
+*.iml
+
