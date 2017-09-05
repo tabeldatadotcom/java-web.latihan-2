@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -27,10 +28,11 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/nasabah")
 public class NasabahController {
 
-    private NasabahDao nasabahDao;
-
     @Autowired
     private final static Logger console = LoggerFactory.getLogger(NasabahController.class);
+    
+    @Autowired
+    private NasabahDao nasabahDao;
 
     @GetMapping("/new")
     public ModelAndView showFormTambah(ModelAndView mav,
@@ -59,4 +61,6 @@ public class NasabahController {
         mav.addObject("listOfNasabah", nasabahDao.findAll());
         return mav;
     }
+    
+    
 }

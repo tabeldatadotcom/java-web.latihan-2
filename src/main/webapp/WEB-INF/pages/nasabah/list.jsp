@@ -33,7 +33,10 @@
                         <td>${nasabah.nomorRegister}</td>
                         <td>${nasabah.nama}</td>
                         <td>${nasabah.jenisKelamin}</td>
-                        <td></td>
+                        <td><form action="${pageContext.servletContext.contextPath}/nasabah/remove" method="post">
+                                <input type="hidden" name="nomorRegister" value="${nasabah.nomorRegister}"/>
+                                <button type="submit" value="Hapus">Hapus</button>
+                            </form></td>
                     </tr>
                 </c:forEach>
             </tbody>
