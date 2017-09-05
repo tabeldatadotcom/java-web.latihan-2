@@ -13,14 +13,13 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.tabeldata.web")
-@EnableJpaRepositories(basePackages = {"com.tabeldata.web"})
+@EnableJpaRepositories(basePackages = {"com.tabeldata.web.repository"})
 public class WebConfigurasi extends WebMvcConfigurerAdapter {
 
     @Override
