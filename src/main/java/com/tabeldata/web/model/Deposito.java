@@ -5,43 +5,33 @@
  */
 package com.tabeldata.web.model;
 
-import com.tabeldata.web.model.Nasabah;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import org.hibernate.annotations.GenericGenerator;
 
 /**
- *
  * @author VALERIANPC
  */
 @Entity
 @Table(name = "m_deposito", schema = "latihan")
 public class Deposito {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer kode;
-    
+
     @Column(name = "jangka_waktu", nullable = false)
     private Integer jangkaWaktu;
-    
+
     @Column(name = "perpanjang_otomatis", nullable = false)
     private Boolean perpanjangOtomatis;
-    
+
     @Column(nullable = false)
     private BigDecimal nominal;
-    
+
     @Column(nullable = false)
     private BigDecimal bungaPerAnum;
-           
+
     @Column(name = "create_on", nullable = false)
     private Timestamp createOn;
 
@@ -117,11 +107,9 @@ public class Deposito {
     public void setNasabah(Nasabah nasabah) {
         this.nasabah = nasabah;
     }
-    
-    
-    
-    
-    }
+
+
+}
     
     
     
