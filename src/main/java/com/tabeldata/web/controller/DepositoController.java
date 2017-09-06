@@ -12,6 +12,8 @@ import com.tabeldata.web.model.JenisKelamin;
 import com.tabeldata.web.model.Nasabah;
 
 import javax.servlet.http.HttpServletRequest;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,6 +29,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/deposito")
 public class DepositoController {
+    
+    @Autowired
+    private final static Logger console = LoggerFactory.getLogger(DepositoController.class);
 
     @Autowired
     private NasabahDao nasabahDao;
@@ -44,6 +49,17 @@ public class DepositoController {
         mav.addObject("listOfNasabah", nasabahDao.findAll());
         mav.setViewName("deposito/aplikasi");
         return mav;
+    }
+    
+    @PostMapping("/new")
+    public String submitFormDeposito(@ModelAttribute(name = "deposito") Deposito d,
+            HttpServletRequest req) {
+
+//        console.info("{Jangka Waktu : "+d.getJangkaWaktu()+
+//                " Perpanjangan Otomatis : "+d.getPerpanjangOtomatis()+" Nominal : "+d.getNominal()+
+//                " Bunga Per Anum :"+d.getBungaPerAnum()+" Create On : "+d.getCreateOn()+"}");
+        depositoDao.save(d);
+        return "redirect:/deposito/new";
     }
 
 }

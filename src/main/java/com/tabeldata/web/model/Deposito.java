@@ -46,7 +46,7 @@ public class Deposito {
     private Timestamp createOn;
 
     @ManyToOne
-    @JoinColumn(name = "id_nasabah")
+    @JoinColumn(name = "id_nasabah", nullable = false)
     private Nasabah nasabah;
 
     public Deposito() {

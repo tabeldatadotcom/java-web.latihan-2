@@ -35,7 +35,7 @@ public class DepositoDao {
         depositoRepository.delete(deposito);
     }
     
-//    public Nasabah findByNomorRegister(int kode){
+//    public Nasabah findByKode(int kode){
 //        return depositoRepository.findOne(kode);
 //    }
     

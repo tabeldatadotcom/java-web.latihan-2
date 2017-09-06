@@ -33,7 +33,7 @@ public class Nasabah {
     @Column(nullable = false, length = 50)
     private String nama;
     
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     @Column(name = "jenis_kelamin", nullable = false)
     private JenisKelamin jenisKelamin;
 

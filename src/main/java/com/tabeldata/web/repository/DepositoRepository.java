@@ -8,6 +8,7 @@ package com.tabeldata.web.repository;
 import com.tabeldata.web.model.Deposito;
 import com.tabeldata.web.model.Nasabah;
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.List;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
@@ -19,5 +20,6 @@ public interface DepositoRepository extends PagingAndSortingRepository<Deposito,
     
     List<Deposito> findAll();
     
+    Deposito findByKodeAndCreateOn(Integer kode, Timestamp createOn);
     
 }
