@@ -30,7 +30,7 @@ public class KartuDeposito {
     private String nomorRekening;
     
     @Column(name = "bulan_ke", nullable = false)
-    private String bulanKe;
+    private Integer bulanKe;
     
     @Column(name = "bunga_bulanan", nullable = false)
     private BigDecimal bungaBulanan;
@@ -49,7 +49,7 @@ public class KartuDeposito {
     public KartuDeposito() {
     }
 
-    public KartuDeposito(String nomorRekening, String bulanKe, BigDecimal bungaBulanan, Date jatuhTempo, Nasabah nasabah, Deposito deposito) {
+    public KartuDeposito(String nomorRekening, Integer bulanKe, BigDecimal bungaBulanan, Date jatuhTempo, Nasabah nasabah, Deposito deposito) {
         this.nomorRekening = nomorRekening;
         this.bulanKe = bulanKe;
         this.bungaBulanan = bungaBulanan;
@@ -66,11 +66,11 @@ public class KartuDeposito {
         this.nomorRekening = nomorRekening;
     }
 
-    public String getBulanKe() {
+    public Integer getBulanKe() {
         return bulanKe;
     }
 
-    public void setBulanKe(String bulanKe) {
+    public void setBulanKe(Integer bulanKe) {
         this.bulanKe = bulanKe;
     }
 

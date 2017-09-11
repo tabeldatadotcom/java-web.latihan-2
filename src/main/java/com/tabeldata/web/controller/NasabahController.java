@@ -62,5 +62,16 @@ public class NasabahController {
         return mav;
     }
     
+    @PostMapping("/remove")
+    public String hapusNasabahByNomorRegister(
+            @RequestParam(name = "nomorRegister") String id){
+        
+        Nasabah nasabah = nasabahDao.findByNomorRegister(id);
+        if (nasabah!=null) {
+            nasabahDao.hapus(nasabah);            
+        }
+        return "redirect:/nasabah/list";
+    }
+    
     
 }
