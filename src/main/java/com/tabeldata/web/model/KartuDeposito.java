@@ -18,51 +18,35 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 /**
- *
  * @author VALERIANPC
  */
 @Entity
 @Table(name = "m_kartu_deposito", schema = "latihan")
 public class KartuDeposito {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String nomorRekening;
-    
+    private Integer nomorRekening;
+
     @Column(name = "bulan_ke", nullable = false)
     private Integer bulanKe;
-    
+
     @Column(name = "bunga_bulanan", nullable = false)
     private BigDecimal bungaBulanan;
-    
+
     @Column(name = "jatuh_tempo", nullable = false)
-    private Date jatuhTempo;  
-    
-    @ManyToOne
-    @JoinColumn(name = "id_nasabah")
-    private Nasabah nasabah;
-    
+    private Date jatuhTempo;
+
     @OneToOne
     @JoinColumn(name = "id_deposito")
     private Deposito deposito;
 
-    public KartuDeposito() {
-    }
 
-    public KartuDeposito(String nomorRekening, Integer bulanKe, BigDecimal bungaBulanan, Date jatuhTempo, Nasabah nasabah, Deposito deposito) {
-        this.nomorRekening = nomorRekening;
-        this.bulanKe = bulanKe;
-        this.bungaBulanan = bungaBulanan;
-        this.jatuhTempo = jatuhTempo;
-        this.nasabah = nasabah;
-        this.deposito = deposito;
-    }
-
-    public String getNomorRekening() {
+    public Integer getNomorRekening() {
         return nomorRekening;
     }
 
-    public void setNomorRekening(String nomorRekening) {
+    public void setNomorRekening(Integer nomorRekening) {
         this.nomorRekening = nomorRekening;
     }
 
@@ -90,14 +74,6 @@ public class KartuDeposito {
         this.jatuhTempo = jatuhTempo;
     }
 
-    public Nasabah getNasabah() {
-        return nasabah;
-    }
-
-    public void setNasabah(Nasabah nasabah) {
-        this.nasabah = nasabah;
-    }
-
     public Deposito getDeposito() {
         return deposito;
     }
@@ -105,9 +81,6 @@ public class KartuDeposito {
     public void setDeposito(Deposito deposito) {
         this.deposito = deposito;
     }
-    
-    
-    
-    
-    
+
+
 }

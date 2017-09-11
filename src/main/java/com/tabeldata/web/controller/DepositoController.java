@@ -9,8 +9,10 @@ import com.tabeldata.web.dao.DepositoDao;
 import com.tabeldata.web.dao.NasabahDao;
 import com.tabeldata.web.model.Deposito;
 import com.tabeldata.web.model.KartuDeposito;
+
 import java.math.BigDecimal;
 import java.sql.Date;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -64,14 +66,7 @@ public class DepositoController {
             HttpServletRequest req) {
         console.info("method ini di panggil");
         d.setCreateOn(Timestamp.valueOf(LocalDateTime.now()));
-        Integer jk = d.getJangkaWaktu();
-        for (int i = 0; i <= jk; i++) {
-            kd.setBulanKe(jk);
-        }
-            kd.setBungaBulanan(BigDecimal.ZERO); 
-            kd.setJatuhTempo(Date.valueOf(LocalDate.now()));
-//            kd.setJatuhTempo(Date.valueOf(LocalDate.(now, 0+1, now)));
-        
+        d.setTanggalAplikasi(Date.valueOf(LocalDate.now()));
         if (bindingResult.hasErrors()) {
             return "redirect:/deposito/new";
         } else {
@@ -80,7 +75,7 @@ public class DepositoController {
         }
 
     }
-    
+
     @GetMapping("/kartu")
     public ModelAndView showListDeposito(ModelAndView mav) {
         mav.setViewName("/nasabah/kartu");

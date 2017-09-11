@@ -34,15 +34,15 @@ Author     : VALERIANPC
                 </tr>
 
                 <tr>
-                    <td><fr:label path="nasabah.nomorRegister">Nomor Register Nasabah : </fr:label></td>
-                    <td>${nasabah.nomorRegister}</td>
+                    <td><fr:label path="deposito.nasabah.nomorRegister">Nomor Register Nasabah : </fr:label></td>
+                    <td>${deposito.nasabah.nomorRegister}</td>
                     <td><fr:label path="deposito.nominal">Nominal : </fr:label></td>
                     <td>${deposito.nominal}</td>
                 </tr>
 
                 <tr>
-                    <td><fr:label path="nasabah.jenisKelamin">Jenis Kelamin :</fr:label></td>
-                    <td>${nasabah.jenisKelamin}</td>
+                    <td><fr:label path="deposito.nasabah.jenisKelamin">Jenis Kelamin :</fr:label></td>
+                    <td>${deposito.nasabah.jenisKelamin}</td>
                 </tr>
 
             </table>

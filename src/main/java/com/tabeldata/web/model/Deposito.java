@@ -7,6 +7,7 @@ package com.tabeldata.web.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.sql.Date;
 import java.sql.Timestamp;
 
 /**
@@ -30,10 +31,13 @@ public class Deposito {
     private BigDecimal nominal;
 
     @Column(nullable = false)
-    private BigDecimal bungaPerAnum;
+    private Integer bungaPerAnum;
 
     @Column(name = "create_on", nullable = false)
     private Timestamp createOn;
+
+    @Column(name = "tanggal_aplikasi", nullable = false)
+    private Date tanggalAplikasi;
 
     @ManyToOne
     @JoinColumn(name = "id_nasabah", nullable = false)
@@ -42,7 +46,7 @@ public class Deposito {
     public Deposito() {
     }
 
-    public Deposito(Integer kode, Integer jangkaWaktu, Boolean perpanjangOtomatis, BigDecimal nominal, BigDecimal bungaPerAnum, Timestamp createOn, Nasabah nasabah) {
+    public Deposito(Integer kode, Integer jangkaWaktu, Boolean perpanjangOtomatis, BigDecimal nominal, Integer bungaPerAnum, Timestamp createOn, Nasabah nasabah) {
         this.kode = kode;
         this.jangkaWaktu = jangkaWaktu;
         this.perpanjangOtomatis = perpanjangOtomatis;
@@ -84,11 +88,11 @@ public class Deposito {
         this.nominal = nominal;
     }
 
-    public BigDecimal getBungaPerAnum() {
+    public Integer getBungaPerAnum() {
         return bungaPerAnum;
     }
 
-    public void setBungaPerAnum(BigDecimal bungaPerAnum) {
+    public void setBungaPerAnum(Integer bungaPerAnum) {
         this.bungaPerAnum = bungaPerAnum;
     }
 
@@ -108,7 +112,13 @@ public class Deposito {
         this.nasabah = nasabah;
     }
 
+    public Date getTanggalAplikasi() {
+        return tanggalAplikasi;
+    }
 
+    public void setTanggalAplikasi(Date tanggalAplikasi) {
+        this.tanggalAplikasi = tanggalAplikasi;
+    }
 }
     
     
